@@ -3,7 +3,7 @@ import Card from "./shared/Card"
 import Button from "./shared/Button";
 import RatingSelect from "./RatingSelect";
 
-function FeedbackForm() {
+function FeedbackForm({handleAdd}) {
     const [text,setText] = useState('')
     const [btnDisabled,setBtnDisabled] = useState(true)
     const [message,setMessage] = useState('')
@@ -23,9 +23,24 @@ function FeedbackForm() {
         setText(e.target.value)
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (text.trim().length > 10) {
+            // click button 後，送出此物件
+            const newFeedback = {
+                text,
+                rating,
+            };
+
+            handleAdd(newFeedback);
+
+            setText('')
+        }
+    }
+
     return (
         <Card>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h2>您如何評價我們的服務？</h2>
                 <RatingSelect select={(rating) => setRating(rating)}/>
                 <div className="input-group">
