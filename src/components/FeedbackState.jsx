@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function FeedbackState({feedback}) {
     let average = feedback.reduce((acc,cur) => {
