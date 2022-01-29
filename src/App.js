@@ -1,5 +1,4 @@
 import './App.css';
-import FeedbackItem from './components/FeedbackItem';
 import FeedbackList from './components/FeedbackList';
 import FeedbackData from './data/FeedbackData';
 import Header from './components/Header';
