@@ -14,7 +14,7 @@ function AboutPage() {
                     <li>● react-router v6</li>
                 </ul>
                 <p>
-                    <Link to="/">Back To Home</Link>
+                    <Link to="/feedback">Back To Home</Link>
                 </p>
             </div>
         </Card>
